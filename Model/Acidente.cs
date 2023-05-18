@@ -20,5 +20,6 @@
         public string RedeApoio { get; set; }
         public Segurado Segurado { get; set; }
         public Veiculo Veiculo { get; set; }
+ 
     }
 }

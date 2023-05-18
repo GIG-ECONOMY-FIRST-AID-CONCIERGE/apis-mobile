@@ -9,16 +9,24 @@ namespace WebApplication1.Controllers
     {
         
         private readonly ILogger<AcidentesController> _logger;
-
+        
         public AcidentesController(ILogger<AcidentesController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet(Name = "GetAcidentes")]
-        public List<Acidente> Get()
-        {   
-            return mockAcidentes();
+        public List<Acidente> Get(bool isActive)
+        {
+            if (isActive)
+            {
+                return mockAcidentes();
+            }
+            else
+            {
+                return mockAcidentes();
+            }
+            
         }
 
         //TODO REMOVER MOCK
@@ -57,6 +65,7 @@ namespace WebApplication1.Controllers
             veiculo.Ano = "2010/2011";
 
             Acidente acidente = new Acidente();
+          
             acidente.Id = id;
             acidente.NomeSinistrado = "Antônio Gomes Ribeiro";
             acidente.Coordenadas = "-22,836251, -43,429802";

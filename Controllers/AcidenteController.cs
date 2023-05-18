@@ -1,3 +1,4 @@
+using apis_mobile.Entity;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Model;
 
@@ -33,7 +34,9 @@ namespace WebApplication1.Controllers
         {
             if (acidente == null)
                 return false;
-            
+
+            new AcidenteContext().Save(acidente);
+
             return true;
         }
 

@@ -5,6 +5,7 @@
         public Acidente()
         {
             this.DataOcorrencia = DateTime.Now;
+            this.AtendimentoAtivo = true;
         }
         public int Id { get; set; }
         public string NomeSinistrado { get; set; }
@@ -20,6 +21,7 @@
         public string RedeApoio { get; set; }
         public Segurado Segurado { get; set; }
         public Veiculo Veiculo { get; set; }
- 
+        public bool AtendimentoAtivo { get; set; }
+
     }
 }

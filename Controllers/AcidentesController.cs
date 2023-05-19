@@ -20,30 +20,39 @@ namespace WebApplication1.Controllers
         {
             if (isActive)
             {
-                return mockAcidentes();
+                return mockAcidentes(isActive);
             }
             else
             {
-                return mockAcidentes();
+                return mockAcidentes(isActive);
             }
             
         }
 
         //TODO REMOVER MOCK
-        private List<Acidente> mockAcidentes()
+        private List<Acidente> mockAcidentes(bool status)
         {
             List<Acidente> acidentes = new List<Acidente>();
-
-            acidentes.Add(mockAcidente(1));
-            acidentes.Add(mockAcidente(2));
-            acidentes.Add(mockAcidente(3));
-            acidentes.Add(mockAcidente(4));
-
+            if (status)
+            {
+                acidentes.Add(mockAcidente(1, status));
+                acidentes.Add(mockAcidente(2, status));
+                acidentes.Add(mockAcidente(3, status));
+                acidentes.Add(mockAcidente(4, status));
+            }
+            else
+            {
+                acidentes.Add(mockAcidente(5, status));
+                acidentes.Add(mockAcidente(6, status));
+                acidentes.Add(mockAcidente(7, status));
+                acidentes.Add(mockAcidente(8, status));
+            }
+           
             return acidentes;
         }
 
         //TODO REMOVER MOCK
-        private Acidente mockAcidente(int id)
+        private Acidente mockAcidente(int id, bool status)
         {
             Segurado segurado = new Segurado();
             segurado.Nome = "Antônio Gomes Ribeiro";
@@ -79,6 +88,7 @@ namespace WebApplication1.Controllers
             acidente.EnviadoOrientacaoSinistro = "SIM";
             acidente.Segurado = segurado;
             acidente.Veiculo = veiculo;
+            acidente.AtendimentoAtivo = status;
 
             return acidente;
         }

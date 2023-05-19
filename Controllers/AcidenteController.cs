@@ -30,14 +30,12 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost(Name = "PostAcidente")]
-        public bool Post(Acidente acidente)
+        public Acidente Post(Acidente acidente)
         {
             if (acidente == null)
-                return false;
+                return null;
 
-            new AcidenteContext().Save(acidente);
-
-            return true;
+            return acidente;
         }
 
         //TODO REMOVER MOCK

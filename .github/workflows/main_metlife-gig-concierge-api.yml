@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'Metlife-GIG-Concierge-API'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6B3EBC231878494D8395940643F02360 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C67E757D6BEB40AE8F2E4CA061C2C34A }}
           package: .
